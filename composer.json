@@ -32,8 +32,8 @@
     },
     "repositories": [
         {
-            "type": "path",
-            "url": "../topadmin_project"
+            "type": "vcs",
+            "url": "https://github.com/top-system/topadmin"
         }
     ]
 }
