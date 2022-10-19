@@ -19,7 +19,12 @@ class AuthController extends BaseController {
         }
 
         $user = $request->user();
+        if ($user->status == 1){
+            return response()->json(new JsonResponse([], 'login_error'), Response::HTTP_UNAUTHORIZED);
+        }
 
+        $user->last_login_ip = $request->ip();
+        $user->save();
         return response()->json(new JsonResponse(new UserResource($user)), Response::HTTP_OK);
     }
 
