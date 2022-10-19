@@ -15,12 +15,12 @@ class AuthController extends BaseController {
     public function login(Request $request){
         $credentials = $request->only('email', 'password');
         if (!Auth::attempt($credentials)) {
-            return response()->json(new JsonResponse([], 'login_error'), Response::HTTP_UNAUTHORIZED);
+            return response()->json(new JsonResponse([], 'login error'), Response::HTTP_UNAUTHORIZED);
         }
 
         $user = $request->user();
         if ($user->status == 1){
-            return response()->json(new JsonResponse([], 'login_error'), Response::HTTP_UNAUTHORIZED);
+            return response()->json(new JsonResponse([], 'account disabled'), Response::HTTP_UNAUTHORIZED);
         }
 
         $user->last_login_ip = $request->ip();
