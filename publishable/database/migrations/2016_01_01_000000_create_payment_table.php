@@ -28,7 +28,7 @@ class CreatePaymentTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('payment_order_extension', function (Blueprint $table) {
+        Schema::create('payment_order_extensions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->comment('用户id');
             $table->string('app_id')->comment('商户id');
@@ -47,6 +47,6 @@ class CreatePaymentTable extends Migration
     public function down()
     {
         Schema::drop('payment_orders');
-        Schema::drop('payment_order_extension');
+        Schema::drop('payment_order_extensions');
     }
 }

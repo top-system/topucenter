@@ -21,7 +21,7 @@ class AddUserFields extends Migration
                 $table->string('email')->unique()->nullable();
             }
             if (!Schema::hasColumn('users', 'email_verified_at')) {
-                $table->string('email_verified_at')->nullable()->default(null);
+                $table->timestamp('email_verified_at')->nullable()->default(null);
             }
             if (!Schema::hasColumn('users', 'amount')) {
                 $table->decimal('amount')->nullable()->default(0.0);
@@ -37,6 +37,12 @@ class AddUserFields extends Migration
             }
             if (!Schema::hasColumn('users', 'last_login_ip')) {
                 $table->tinyInteger('last_login_ip')->nullable();
+            }
+            if (!Schema::hasColumn('users', 'vip')) {
+                $table->tinyInteger('vip')->nullable();
+            }
+            if (!Schema::hasColumn('users', 'vip_expire_at')) {
+                $table->timestamp('vip_expire_at')->nullable();
             }
         });
     }
@@ -81,6 +87,16 @@ class AddUserFields extends Migration
         if (Schema::hasColumn('users', 'last_login_ip')) {
             Schema::table('users', function ($table) {
                 $table->dropColumn('last_login_ip');
+            });
+        }
+        if (Schema::hasColumn('users', 'vip')) {
+            Schema::table('users', function ($table) {
+                $table->dropColumn('vip');
+            });
+        }
+        if (Schema::hasColumn('users', 'vip_expire_at')) {
+            Schema::table('users', function ($table) {
+                $table->dropColumn('vip_expire_at');
             });
         }
     }
