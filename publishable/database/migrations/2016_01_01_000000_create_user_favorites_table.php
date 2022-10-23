@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateUserLikeTable extends Migration
+class CreateUserFavoritesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUserLikeTable extends Migration
     public function up()
     {
         // Create table for storing roles
-        Schema::create('user_like', function (Blueprint $table) {
+        Schema::create('user_favorites', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
             $table->string('title');
@@ -33,6 +33,6 @@ class CreateUserLikeTable extends Migration
      */
     public function down()
     {
-        Schema::drop('user_like');
+        Schema::drop('user_favorites');
     }
 }

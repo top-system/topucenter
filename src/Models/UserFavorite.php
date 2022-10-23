@@ -11,6 +11,8 @@ class UserFavorite extends Model
 {
     use Translatable;
 
+    const UPDATED_AT = null;
+
     protected $translatable = ['title'];
 
     protected $fillable = ['user_id', 'title','thumbnail','url','description','table_name','object_id'];
