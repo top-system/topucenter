@@ -24,6 +24,7 @@ class CreatePaymentTable extends Migration
             $table->decimal('amount')->comment('充值金额');
             $table->tinyInteger('status')->comment('0:待支付，1:已支付，2:已取消');
             $table->string('description')->comment('订单描述');
+            $table->string('extend')->comment('扩展数据');
             $table->string('request_ip',16)->comment('发起IP');
             $table->timestamps();
         });

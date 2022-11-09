@@ -14,7 +14,7 @@ class PaymentOrder extends Model
     use Translatable;
     use Resizable;
 
-    protected $translatable = ['user_id', 'app_id', 'gateway', 'channel', 'currency', 'trade_no', 'amount', 'status', 'description', 'request_ip'];
+    protected $translatable = ['user_id', 'app_id', 'gateway', 'channel', 'currency', 'trade_no', 'amount', 'status', 'description', 'request_ip', 'extend'];
 
     public const PUBLISHED = 'PUBLISHED';
 
