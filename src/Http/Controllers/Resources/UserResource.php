@@ -29,7 +29,7 @@ class UserResource extends JsonResource
                 $this->roles->toArray()
             ),
             'token' => $this->createToken('default')->plainTextToken,
-            'avatar' => $this->avatar,
+            'avatar' => "https://video.topsystem.cc/storage/" . $this->avatar,
         ];
     }
 }
