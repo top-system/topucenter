@@ -29,7 +29,7 @@ class UserResource extends JsonResource
                 $this->roles->toArray()
             ),
             'token' => $this->createToken('default')->plainTextToken,
-            'avatar' => 'https://i.pravatar.cc',
+            'avatar' => $this->avatar,
         ];
     }
 }
