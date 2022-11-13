@@ -14,6 +14,9 @@ class UserResource extends JsonResource
      */
     public function toArray($request)
     {
+        if ($this->vip <= 0 && $this->vip_expire_at < date('Y-m-d H:i:s')){
+            $this->vip = 0;
+        }
         return [
             'id' => $this->id,
             'name' => $this->name,
