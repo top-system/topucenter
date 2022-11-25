@@ -20,7 +20,6 @@
         "topsystem/topadmin": "dev-master",
         "laravel/socialite": "^5.5",
         "league/omnipay": "^3.2",
-        "topsystem/omnipay-alipay": "dev-master",
         "laravel/sanctum": "^3.0"
     },
     "extra": {
