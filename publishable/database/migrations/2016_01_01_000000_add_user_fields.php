@@ -20,6 +20,9 @@ class AddUserFields extends Migration
             if (!Schema::hasColumn('users', 'email')) {
                 $table->string('email')->unique()->nullable();
             }
+            if (!Schema::hasColumn('users', 'mobile')) {
+                $table->string('mobile')->unique()->nullable();
+            }
             if (!Schema::hasColumn('users', 'email_verified_at')) {
                 $table->timestamp('email_verified_at')->nullable()->default(null);
             }

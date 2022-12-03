@@ -15,6 +15,6 @@ class User extends Authenticatable implements UserContract
 {
     use Translatable, HasApiTokens, HasFactory, Notifiable, AdminUser;
 
-    protected $fillable = ['name', 'username', 'password', 'email', 'mobile', 'avatar'];
+    protected $fillable = ['name', 'username', 'mobile', 'password', 'email', 'mobile', 'avatar'];
 
 }
