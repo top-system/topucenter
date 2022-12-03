@@ -72,6 +72,7 @@ class JsonResponse implements \JsonSerializable
         $this->success = true;
         $this->data = $data;
         $this->error = '';
+        return $this;
     }
 
     /**
@@ -83,6 +84,7 @@ class JsonResponse implements \JsonSerializable
         $this->success = false;
         $this->error = $error;
         $this->data = [];
+        return $this;
     }
 
     /**

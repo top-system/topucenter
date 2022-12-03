@@ -26,6 +26,7 @@ class AuthController extends BaseController {
             'email.exists' => 'Email or username already registered',
             'username.exists' => 'Username is already registered',
             'password.required' => 'Password cannot be empty',
+            'mobile.required' => 'Mobile cannot be empty',
         ];
 
         $rules = [
@@ -33,6 +34,7 @@ class AuthController extends BaseController {
             'password' => 'required|string',
             'email' => 'string|exists:users',
             'username' => 'string|exists:users',
+            'mobile' => 'string|exists:users',
         ];
         $validator = Validator::make($request->all(),$rules,$messages);
         if($validator->fails()){
